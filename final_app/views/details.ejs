@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+	<link rel="stylesheet" href="/accueil.css">	
+	<meta charset="utf-8">
+	<style>
+		/* Les descendants de rang impair sont stylés avec une couleur     */
+		tbody:nth-child(odd)  { background-color : #CED4E5; }
+		/* Les descendants de rang pair sont stylés avec une autre couleur */
+		tbody:nth-child(even) { background-color : #E8EBF5; }
+		th { background-color : #557CBA; padding:0.7em; }
+		td { padding:0.5em; }
+        body{background-color: rgb(40, 110, 80)}
+		table{ margin-left: auto;
+        margin-right: auto;}
+        * {
+	margin: 0;
+	padding: 0;
+}   
+	</style>
+</head>
+<body>
+	<%-include ("../public/navbar2.ejs")%>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Age</th>
+				<th>Phone</th>
+				<th>list</th>
+                <th>address</th>
+                <th>Sexe</th>
+			</tr>
+		</thead>
+
+		<tbody>
+            <tr>
+				<td><%= student.name %> </td>
+				<td><%= student.email %></td>
+				<td><%= student.age %></td>
+				<td><%= student.phone %></td>
+				<td><form>
+					<button ><a href="/liste">back</a></button>
+				  </form>
+				</td>
+                <td><%= student.address %></td>
+                <td><%= student.sexe %></td>
+			</tr>
+        </tbody>
+	</table>
+</body>
+</html>
